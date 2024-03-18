@@ -33,15 +33,12 @@ int main(int argc, char *argv[])
 
     i = 0; 
     s = argv[1];
-    if (argc == 2 && s[1]!= '\0')
+    if (argc == 2 && s[i]!= '\0')
     {
-     
+        while ((s[i] == ' ' || s[i] == '\t') && s[i] != '\0')
+            i++;
         while (s[i] != '\0')
         {
-            while ((s[i] == ' ' || s[i] == '\t') && s[i] != '\0')
-            { 
-                i++;
-            }
             while (s[i] != ' ' && s[i] != '\t' && s[i] != '\0')
             {
                 write(1, &s[i], 1);
